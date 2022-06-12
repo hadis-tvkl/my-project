@@ -17,7 +17,7 @@ void Animal::setPosition(double x, double y) {
     this->y=y;
 }
 
-void Animal::move(const double &x, const double &y) {
+void Animal::move(const double &x, const double &y) { //updates animal location
     this->x = this->x+x;
     this->y = this->y+y;
 }
@@ -30,6 +30,6 @@ double Animal::getY() const {
     return y;
 }
 
-bool Animal::isInPit(double x, double y, double r) const {
+bool Animal::isInPit(double x, double y, double r) const {  //is the distance of animal and hole less than r? in pit then!
     return sqrt(pow((this->x-x),2) + pow((this->y-y),2)) < r;
 }

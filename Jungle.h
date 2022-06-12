@@ -11,8 +11,8 @@ private:
     Animal** animals;
 
 public:
-    static const int length = 800;
-    static const int width = 700;
+    static const int length = 800; //length of area
+    static const int width = 700;  //width of area
     static const int xx = 100; //x of pit's center
     static const int yy = 180; //y of pit's center
     static const int r = 10; //radius of pit
