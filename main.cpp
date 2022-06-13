@@ -10,29 +10,28 @@ int main() {
     int n;
     cout<<"Enter the total number of animals";
     cin>>n;
-    Jungle wildsObject(n/2) ;
-    Jungle domesticsObject(n/2);
+    Jungle* object=new Jungle(n) ;
    // now the animals are made
+
+
     WildAnimal* tempObject1;
     for (int i = 0; i < n/2; ++i) {
-        wildsObject.AddAnimal(tempObject1);  //animals are becoming added and customized successfully
+        tempObject1=new WildAnimal();      //making an object for each animal
+        object->AddAnimal(tempObject1);
     }
     DomesticAnimal* tempObject2;
     for (int i = 0; i < n/2; ++i) {
-        domesticsObject.AddAnimal(tempObject2);  //animals are becoming added and customized successfully
+        tempObject2=new DomesticAnimal();
+        object->AddAnimal(tempObject2);  //animals are added
     }
-    for (int i = 0; i < n/2; ++i) {
-        for (int j = 0; j < 1000; ++j) {
-            wildsObject.movement();
-        }}
-    cout<<"The total fall of wild animals:\t"<<wildsObject.getTotalFall();
 
-    for (int i = 0; i < n/2; ++i) {
-        for (int j = 0; j < 1000; ++j) {
-            domesticsObject.movement();
+        for (int i = 0; i < 1000; ++i) {
+            object->movement();
         }
-    }
-    cout<<"\nThe total fall of domestic animals:\t"<<domesticsObject.getTotalFall();
+    cout<<"The total fall of wild animals:\t"<<object->getTotalFall();
 
+    delete object;
+    delete tempObject1;
+    delete tempObject2;
     return 0;
 }
