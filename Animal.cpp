@@ -31,5 +31,5 @@ double Animal::getY() const {
 }
 
 bool Animal::isInPit(double x, double y, double r) const {  //is the distance of animal and hole less than r? in pit then!
-    return sqrt(pow((this->x-x),2) + pow((this->y-y),2)) < r;
+    return (sqrt(pow((this->x-x),2) + pow((this->y-y),2)) < r);
 }

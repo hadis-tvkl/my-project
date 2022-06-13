@@ -38,5 +38,6 @@ void Jungle::movement() {
             (*animals[i]).fall();
             this->totalFall++;
         }
+        //else std::cout<<".";
     }
 }
